@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+	  
+	  //$.ajax(요소); , $(요소).ajax();
+	 //$.ajax("string1.jsp");
+	 //location.href="string1.jsp";
+	 
+	 $.ajax('string1.jsp',{
+		 success: function(data){
+			 alert("전송 성공!");
+			 alert("data : "+data);
+			 $('body').append(data);
+		 }
+	 });
+	 
+	 
+	  
+  });
+</script>
+
+</head>
+<body>
+   <h1>WebContent/jq3/string1.html</h1>
+   
+</body>
+</html>

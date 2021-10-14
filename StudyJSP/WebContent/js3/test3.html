@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fun1(){
+		// window-document-form-input,textarea....
+		
+		//alert(window.document.forms[0].userID.type);
+		//alert(window.document.fr.userPW.type);
+		//'속성확인'버튼 클릭시 입력된 비밀번호 정보를 출력
+		//alert("비밀번호 : "+document.fr.userPW.value);
+		
+		// input.기능()
+		// .focus()  .blur()   .select()
+		
+		//document.fr.userID.focus();
+		//document.fr.userID.blur();
+		document.fr.userID.select();
+	}// fun1()
+	
+	function fun2(){
+		//alert(document.fr.userID.value.length);
+		//'버튼 클릭시' id정보를 입력했을때만 페이지 이동
+		var nameLen = document.fr.userID.value.length;
+		
+		alert("입력값 길이 : "+nameLen);
+		
+// 		if(document.fr.userID.value.length>0){
+// 			// 데이터 입력
+// 		}
+		if(document.fr.userID.value == ""){
+			alert("ID 정보입력하시오!");
+			document.fr.userID.focus();			
+			//break; (x)
+			// 함수를 종료 코드
+			return;
+		}else{
+			alert("ID 정보 입력완료!");
+			//페이지 이동 (submit)
+			//document.fr.submit();
+		}
+		
+		// 비밀번호, 주민번호(1,2),하고싶은말 항목이 입력 되어있을때만 
+		// 페이지 전송 처리 
+		var pw = document.fr.userPW.value;
+		var ju1 = document.fr.ju1.value;
+		var ju2 = document.fr.ju2.value;
+		var msg = document.fr.msg.value;
+		
+		if(pw == ""){
+			alert(" 비밀번호를 입력하세요 ");
+			document.fr.userPW.focus();
+			return;
+		}
+		if(ju1 == ""){
+			alert(" 주민번호 앞자리 입력하세요.");
+			document.fr.ju1.focus();
+			return;
+		}
+		if(ju2 == ""){
+			alert(" 주민번호 뒷자리 입력하세요");
+			document.fr.ju2.focus();
+			return;
+		}
+		if(msg == ""){
+			alert("메세지를 입력하세요");
+			document.fr.msg.focus();
+			return;
+		}
+		document.fr.submit();
+	}
+	//fun2()
+	
+	// fun3() -> submit 이벤트 발생시에도 fun2()처럼 작동처리
+    function fun3(){
+		var id = document.fr.userID.value;
+    	var pw = document.fr.userPW.value;
+		var ju1 = document.fr.ju1.value;
+		var ju2 = document.fr.ju2.value;
+		var msg = document.fr.msg.value;
+		
+		// onsubmit="return fun3()";
+		//           return  (x)/true => sumbit 이벤트 진행O
+		//           return  false => submit 이벤트 진행 X           
+		
+		
+		if(id == ""){
+		    alert("아이디를 입력하세요");
+		    document.fr.userID.focus();
+		    return false;
+		}		
+		if(pw == ""){
+			alert(" 비밀번호를 입력하세요 ");
+			document.fr.userPW.focus();
+			return false;
+		}
+		if(ju1 == ""){
+			alert(" 주민번호 앞자리 입력하세요.");
+			document.fr.ju1.focus();
+			return false;
+		}
+		if(ju2 == ""){
+			alert(" 주민번호 뒷자리 입력하세요");
+			document.fr.ju2.focus();
+			return false;
+		}
+		if(msg == ""){
+			alert("메세지를 입력하세요");
+			document.fr.msg.focus();
+			return false;
+		}
+		
+		// sumbit() 이벤트 실행
+	}
+	//fun3()
+	
+	
+</script>
+</head>
+<body>
+	<h1>WebContent/js3/test3.html</h1>
+
+	<fieldset>
+	   <legend>정보입력 form</legend>
+		<form action="test.jsp" name="fr" onsubmit="return fun3();">
+		 <label>아이디 :</label>
+		 <input type="text" name="userID" value=""> <br>
+		  비밀번호 : <input type="password" name="userPW" > <br>
+		  주민번호 : <input type="text" name="ju1">
+		          - 
+		          <input type="text" name=ju2><br>
+		  하고싶은말 : <textarea rows="5" cols="50" name="msg"></textarea><br>
+		 
+		 <hr>
+			 <input type="submit" value="정보입력"> 
+			 <input type="reset" value="정보초기화">
+		 <hr>
+		    <input type="button" value="속성 확인" onclick="fun1();">
+		    <input type="button" value="값 확인후 이동" onclick="fun2();">
+		  		
+		</form>
+	</fieldset>
+	
+	
+	
+	
+</body>
+</html>

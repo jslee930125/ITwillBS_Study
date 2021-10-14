@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   // 중첩 반복문 (중첩 for문)
+   // 시침이 1증가 하기위해서, 분침이 처음부터 끝까지 반복
+  /* 
+  for(초기식;조건식;증감식){ // 시침
+	   for(초기식;조건식;증감식){ // 분침
+		   반복할 코드;
+	   }
+   } 
+   */
+   
+   for(var i=1;i<=5;i++){
+	   document.write(i+"시<br>");
+	   for(var j=1;j<=5;j++){
+		   document.write("i = "+i+", j = "+j+"<br>");
+	   }
+	   document.write("<hr>");
+   }
+   
+   document.write("<hr>");
+   // 구구단 2~9단 출력
+   // [2단]
+   // 2 * 1 = 2 
+   // 2 * 2 = 4
+   //  ...
+   // [3단]
+   // [4단]
+   //  ...
+   // 9 * 9 = 81
+   
+   //var dan
+   
+   for(var dan=2;dan<=9;dan++){ //2단~9단
+	   document.write("["+dan+" 단]<br>");
+	   for(var i=1;i<=9;i++){ // 1~9
+		   document.write(dan+" * "+i+" = "+(dan*i)+" <br>");
+	   }
+   		document.write("<br>");
+   }
+   
+   document.write("<hr>");
+   // 구구단 2~9단 가로 출력
+   // [2단]			[3단]		...   [9단]
+   // 2 * 1 = 2 	3 * 1 = 3		9 * 1 = 9
+   // 2 * 2 = 4 	3 * 2 = 6		9 * 2 = 18
+   //  ...				...				...
+   
+   
+   for(var i=0;i<=9;i++){ // 1~9
+	   for(var dan=2;dan<=9;dan++){ // 2~9
+		  if(i==0){
+			  document.write("[ "+dan+"단 ] &nbsp;&nbsp;");
+		  } else{ // 1~9
+			  document.write(dan+" * "+i +" = "+(dan * i)+" &nbsp;&nbsp;");			  
+		  } 
+	   }
+      document.write("<br>");
+   }
+   
+
+
+
+</script>
+</head>
+<body>
+  <h1>WebContent/js1/test8.html</h1>
+  
+  
+  
+  
+</body>
+</html>

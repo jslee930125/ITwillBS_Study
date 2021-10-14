@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  // 브라우저 객체 모델: 브라우저 객체 
+  // window 객체 - 하위 객체 (document,screen,location,history,navigator)
+  
+  // window 객체 : 브라우저 창을 표시하는 객체
+  // => window 객체이름을 생략해도됨.
+  
+  //alert("출력");
+  // 기능 - 메서드( open(),alert(), prompt(),confirm()..... )
+  window.alert("출력");
+  
+  // document 객체  : 현재 문서페이지의 정보를 나타내는 객체 
+  // window.document.write();
+  
+  // screen 객체  : 사용자의 모니터 정보를 제공하는 객체(모니터 크기,해상도)
+  //alert(screen.width);
+  //alert(screen.height);
+  //alert(screen.availWidth);
+  //alert(screen.availHeight)
+  
+  // 이벤트 : 사용자가 브라우저에서 발생시킨 모든 동작 (마우스,키보드,..)
+  // 이벤트 핸들러 : html 태그에서 onXXXX 시작하는 동작들은 이벤트 처리 
+  // => 자바스크립트 코드를 실행가능
+  
+
+</script>
+</head>
+<body onload=" alert('onload  실행!');">
+  <h1>WebContent/js2/test5.html</h1>
+
+  <!-- 버튼객체 생성 -->
+  <input type="button" value="버튼1" onclick="alert('클릭!');">
+
+  <input type="button" value="버튼2" ondblclick="alert('더블클릭');">
+
+  <hr>
+  
+  <!-- <img src="data:image/png;base64,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"> -->
+  <img src="../images.png" width="100" height="100"
+       onmouseover=" alert('마우스 오버!!!');"
+    >
+  
+   <input type="text" onkeyup=" alert(' 키보드 입력 ');"> 
+
+   <hr>
+   <!-- 마우스 올라왔을때(over) 초록색으로 변경,
+        마우스가 나갔을때 (out) 노란색으로 변경
+        
+        style.background="색상";
+    -->
+   <table>
+     <tr bgcolor="yellow" onmouseover="style.background='green'" 
+         onmouseout="style.background='yellow'"
+     >
+       <td>1</td>
+       <td>1</td>
+     </tr>
+     <tr>
+       <td>1</td>
+       <td>1</td>
+     </tr>
+     <tr>
+       <td>1</td>
+       <td>1</td>
+     </tr>
+   </table>
+
+
+
+
+
+
+
+
+</body>
+</html>

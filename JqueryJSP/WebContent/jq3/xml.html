@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+	  
+	  //ajax 사용해서 xml 데이터를 가져오기 
+	  $.ajax('xml.jsp',{
+		  
+		  success: function(data){
+			  alert("xml 페이지 데이터 가져옴");
+			  //alert(data);
+			  //console.log(data);
+			  // $('body').append(data);
+			  $(data).find('person').each(function(){
+				  //alert( $(this).find('name').text() );
+				  // body 태그에 이름,나이,성별 출력
+				  var name = $(this).find('name').text();
+				  var age = $(this).find('age').text();
+				  var gender = $(this).find('gender').text();
+				  
+				  $('body').append("이름 : "+name+"<br>"+
+					    "나이 : "+age+"<br>"+
+					    "성별 : "+gender+"<hr>" );
+				  
+			  });
+			  
+		  }
+	  });
+	  
+	  
+	  
+  });
+
+</script>
+
+</head>
+<body>
+  <h1>WebContent/jq3/xml.html</h1>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script type="text/javascript">
+    // window 객체 - open() 
+    
+    //alert(window.opener);
+    //alert(window.status);
+    
+    // window.open("주소","창이름","옵션");
+    // window.open("http://www.naver.com","","width=400,height=300,top=200,left=200");
+    
+    // window.close();
+    // window.close();
+    
+    function winopen(){
+    	//alert("창열기 버튼 클릭");
+    	
+    	window.open("test6_1.html","","width=300,height=300");
+    	
+    }
+    
+    
+    
+ </script>	
+</head>
+<body>
+ <h1>WebContent/js2/test6.html</h1>
+ 
+ <!-- 버튼 2개
+   버튼1 : 버튼클릭시 창열기 동작실행->test6_1.html 새창 열기
+   버튼2 : 버튼 클릭시 새창 닫기
+  -->
+  
+  <input type="button" value="창열기" onclick="winopen();">
+ 
+ <!-- <input type="button" value="창닫기" onclick="window.close();"> -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</body>
+</html>

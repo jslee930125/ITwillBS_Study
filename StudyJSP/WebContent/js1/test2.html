@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+  // 1. 자바스크립트는 대/소문자를 구분
+  // 2. 실행문의 끝에는 ;(세미콜론을 사용)
+  // 3. 한줄에 한문장만 처리 
+  // 4. 괄호는 짝이 맞아야함  () {} []
+  // 5. 문자형 데이터 "",'' 모두 사용가능 (겹쳐서 사용시 주의)
+
+  // 출력문 - 화면에 출력하는 출력문
+  document.write(" 안녕하세요~!(JS) ");
+  // 출력문 - 콘솔창에 출력하는 출력문
+  console.log("안녕하세요~!(log)");
+  
+  
+  //document.write(" "안녕" ");
+  document.write('<br> "안녕" ');
+  
+  //document.write(100+200);
+  document.write('<br> 100+200');
+  document.write('<br>'+100+200);
+  document.write('<br>'+(100+200));
+  
+  // [+] 기호 : 1) 연산자  2) 연결자
+  // 1) 연산자
+  // 100 + 200 => 300
+  // 200 + 200 => 400
+  //  ....
+  // 숫자 + 숫자 => 숫자 (덧셈)
+  
+  // 2) 연결자
+  // "test"+100 => "test100"
+  // 100 + "test" => "100test"
+  // 3.12 + "test" => "3.12test"
+  //  ...
+  // => 문자 + 모든타입 => 문자
+  
+  // 100 + 200 = 300
+  //  N  S  N  S (연산)
+  // => 화면에 결과 출력 [100 + 200 = 300]
+  document.write("<br>");
+  document.write(100+"+"+200+"="+(100+200));
+  document.write("<br>");
+  //이스케이프 문자
+  document.write("안녕            하세요.");
+  document.write("<br>");
+  document.write("안녕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;하세요.");
+  document.write("<br>");
+  document.write("안녕 \t하세요.");
+  document.write("<br>");
+  document.write("안녕 \n하세요.");
+  document.write("<br>");
+  
+  //alert("안녕 \n 하세요");
+  // 화면에 자바설치 경로 출력
+  // C:\Program Files\Java\jdk1.8.0_151\bin
+  
+ // document.write("C:/Program Files/Java/jdk1.8.0_151/bin");
+  document.write("C:\\Program Files\\Java\\jdk1.8.0_151\\bin");
+  
+  document.write("<br>");
+  document.write(" \"안녕\" ");
+  
+
+</script>
+
+</head>
+<body>
+  <h1>WebContent/js2/test2.html</h1>
+  
+   안녕하세요~!(HTML)<br>
+  
+
+</body>
+</html>

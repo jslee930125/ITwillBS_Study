@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<!-- 외부파일을 사용한 자바스크립트 -->
+<script src="../js/myScript.js"></script>
+
+<script type="text/javascript">
+	// alert("안녕하세요!");
+	//   ctrl + shift +c  한줄짜리 주석
+	//   주석문 : 비실행문, 작동하지 않는 코드
+	/*
+	  여러줄 짜리 주석문
+	  1
+	  2
+	  3
+	 */
+	// ctrl+shift + /   여러줄짜리 주석
+	/* 
+	 1
+	 2
+	 */
+
+	//   1
+	//   2
+	// 자바스크립트 : HTML페이지에서 특정 동작에 대한 반응을 처리하기위한 언어
+	// => JQuery(제이쿼리): 자바스크립트 라이브러리(확장판)
+	// * HTML안에 JS가 포함되어 있음
+	// 1) 자바스크립트는 인터프린터 언어 (<->컴파일 언어)
+	//  => 코드를 읽어서 순차적으로 실행(에러가 발생한 코드 이후는 실행 X)
+	// 2) 자바스크립트는 클라이언트 스크립트 언어
+	//  => 서버의 부하를 줄여주는 처리가 가능한 언어
+	// 3) 객체 기반 언어
+	// 4) 오픈소스 언어 
+	// => 외부의 파일을 사용해서 처리가능
+	// 5) 다양한 라이브러리제공
+	// * HTML5 API 기반의 언어
+	// HTML / CSS 학습이 필요함.
+</script>
+
+<script type="text/javascript">
+	alert(" head 실행! ");
+</script>
+
+
+
+</head>
+<body>
+	<h1>WebContent/js1/test1.html</h1>
+	222222222222222222222
+
+    <!-- a태그를 사용하여 자바스크립트 실행  -->
+	<a href="javascript: alert('a태그');">자바스크립트(하이퍼링크)</a>
+	<hr>
+	<!-- button태그를 사용해서 자바스크립트 실행 -->
+	<input type="button" value="버튼" onclick=" alert('버튼');">
+	
+	<!-- 자바스크립트 태그 사용 자바스크립트 실행(header,body) -->
+	<script type="text/javascript">
+	   alert(" body 실행! ");
+	</script>
+
+
+</body>
+</html>

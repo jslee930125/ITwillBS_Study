@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 스프링 설정파일: 사용가능한 객체를 미리 생성 -->
+
+<!-- dtd설정 : xml파일을 beans형태로 생성하겠다 -->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+<beans>
+	<!-- 타겟 객체 생성 -->
+	<bean id="calTarget" class="com.itwillbs.aop.Calculator"/>
+	<!-- 어드바이스 객체 생성 -->
+	<bean id="logAdvice" class="com.itwillbs.aop.LoggingAdvice"/>
+	
+	<!-- ProxyFactoryBean 객체 생성(타겟과 어드바이스를 연결) -->
+	<bean id="proxyCal" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="calTarget"/>
+		<property name="interceptorNames">
+		  <list>
+		  	<value>logAdvice</value>
+		  </list>
+		</property>	
+	</bean>
+	
+</beans>        
+        
+
+
+
+
+
+
+
+
+
+
+
+

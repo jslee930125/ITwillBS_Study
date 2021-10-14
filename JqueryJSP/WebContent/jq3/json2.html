@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		$.getJSON('json2.json',function(data){
+			//alert(data[0]);
+			//console.log(data);
+			//console.log(data[0]);
+			//console.log(data[0].name);
+			
+			$.each(data,function(idx,item){
+				console.log(idx+"//"+item);
+				console.log(item);
+				$('body').append('이름:'+item.name+'나이 :'+item.age+"성별:"+item.gender+"<br>");
+				
+				// table에 json데이터를 추가 
+				var tr ="<tr>";
+				tr += "<td>"+item.name+"</td>";
+				tr += "<td>";
+				tr += item.age
+				tr += "</td>";
+				tr += "<td>";
+				tr += item.gender
+				tr += "</td>";
+				tr += "</tr>";
+				
+				//$('table').append("<tr><td>"+item.name+"</td><td>"+item.age+"</td><td>"+item.gender+"</td></tr>");
+				$('table').append(tr);
+				
+			});
+		});
+		
+		
+
+	});
+</script>
+</head>
+<body>
+  <h1>WebContent/jq3/json2.html</h1>
+  
+  <table border="1">
+    <tr>
+      <td>이름</td>
+      <td>나이</td>
+      <td>성별</td>
+    </tr>  
+  </table>
+  
+  
+
+</body>
+</html>

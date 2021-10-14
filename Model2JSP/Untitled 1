@@ -1,0 +1,16 @@
+// String과 StringBuffer의 차이점
+			// String = 메서드를 통한 실행정보 저장x => 바로 사용해야 함, 기존값 변경x
+			// StringBuffer = 메서드를 통한 실행정보 저장o => 기본값 변경o
+			// String str = "abcde";
+			// str출력시 : abcde
+			// str.toUpperCase(); 대문자로 변경
+			// str 출력시 여기서도 abcde 대문자로 나오지 않음, 메서드 종료 후에도 저장하지 않음
+			// str.toUpperCase()로 출력해야 그렇게 나옴
+			
+			// StringBuffer의 경우
+			// StringBuffer sb = new StringBuffer();
+			// sb.append("abcde");
+			// sb 출력시 abcde
+			// sb.reverse(); 문자열 뒤집기
+			// sb 출력시 edcba로 출력이 됨
+			// 여기서 sb.reverse 출력시 다시 abcde로 출력이 됨

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   //  window-document-form-select태그(객체)
+   // 속성 - .name .length .type .selectedIndex (위치 값)
+    function fun1() {
+	   alert("name : "+document.fr.subject.name);
+	   // option의 개수를 계산
+	   alert("length : "+document.fr.subject.length);
+	   alert("type: "+document.fr.subject.type);
+	   alert("selectedIndex : "+document.fr.subject.selectedIndex);
+	   
+	   // window-document-form-select태그(객체).options[위치].속성
+	   // .text   .value    .selected (t/f)
+	   
+	   alert("text : "+document.fr.subject.options[0].text);
+	   alert("value : "+document.fr.subject.options[0].value);
+	   
+	}
+   
+   // select 변경시 마다 변경된 해당 option의 text값을 출력(alert)
+   function fun2(){
+	   var sidx = document.fr.subject.selectedIndex;
+	   //alert("변경정보 : "+document.fr.subject.options[0].text);
+	   alert("변경정보 : "+document.fr.subject.options[sidx].text);
+	   
+   }
+   
+   // 선택된 항목이 없을경우 submit이벤트 처리 X
+   function fun3(){
+	   // select-selectedIndex -> 사용
+	   // select-options[0]-seleted -> 사용
+	   // select-options[0]-value 확인 ""  -> 사용
+	   //if(document.fr.subject.options[0].selected == true)
+	   //if(document.fr.subject.options[0].selected)	
+	   //if(document.fr.subject.options[0].value == "")	   
+	   if(document.fr.subject.selectedIndex == 0){
+		   alert(" 과목을 선택하세요! ");
+		   document.fr.subject.focus();
+		   return false;
+	   }
+	   
+   }
+   
+	
+	
+</script>
+</head>
+<body>
+	<h1>WebContent/js3/test5.html</h1>
+
+	<form action="a.jsp" method="get" name="fr" onsubmit="return fun3();">
+
+		<!-- size="3" multiple="multiple" -->
+		<select name="subject" onchange="fun2();">
+   		    <!-- option에 value값이 없을경우 text값이 value 값으로 처리 -->
+			<option value="">선택하세요.</option>
+			<option value="java">자바</option>
+			<option value="js">자바스크립트</option>
+			<option value="jsp">웹프로그램JSP</option>
+			<option value="web">웹프로그램WEB</option>
+			<option value="db">디비</option>
+		</select>
+
+		<hr>
+		<input type="submit" value="전달하기">
+		<input type="button" value="select 속성 확인" onclick="fun1();">
+
+	</form>
+
+
+</body>
+</html>

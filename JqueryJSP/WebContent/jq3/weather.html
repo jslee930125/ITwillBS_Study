@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+	  
+	  $.ajax("weather.jsp",{
+		  
+		  success: function(data){
+			  //alert("성공");
+			  $(data).find('data').each(function(){
+				  
+				  var wfKor= $(this).find('wfKor').text();
+				  var wfEn = $(this).find('wfEn').text();
+				  $('body').append("날씨 정보 :"+wfKor+","+wfEn+"<hr>");
+				  
+			  });
+			  
+		  },
+		  error:function(data){
+			  alert("실패");
+			  alert(data);
+			  console.log(data);
+		  }
+		  
+	  });
+	  
+	  
+	  
+	  $.ajax('https://fs.jtbc.joins.com//RSS/sports.xml',{
+		  
+		  success: function(){
+			  alert("성공!!");
+		  }
+		  
+	  });
+	  
+	  
+	  
+	  
+  });
+</script>
+
+
+
+
+
+</head>
+<body>
+  <h1>WebContent/jq3/weather.html</h1>
+  
+  
+  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Model2JSP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>MemberFrontController</servlet-name>
+    <servlet-class>com.itwillbs.member.action.MemberFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberFrontController</servlet-name>
+    <url-pattern>*.me</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 쇼핑몰-관리자상품등록 -->
+  <servlet>
+    <servlet-name>AdminGoodsFrontController</servlet-name>
+    <servlet-class>com.itwillbs.admin.goods.action.AdminGoodsFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AdminGoodsFrontController</servlet-name>
+    <url-pattern>*.ag</url-pattern>
+  </servlet-mapping>  
+  <!-- 쇼핑몰-관리자상품등록 -->
+  
+   <!-- 쇼핑몰-일반사용자 -->
+  <servlet>
+    <servlet-name>GoodsFrontController</servlet-name>
+    <servlet-class>com.itwillbs.goods.action.GoodsFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GoodsFrontController</servlet-name>
+    <url-pattern>*.go</url-pattern>
+  </servlet-mapping>  
+  <!-- 쇼핑몰-일반사용자 -->
+  
+  <!-- 쇼핑몰-장바구니  -->
+  <servlet>
+     <servlet-name>BasketFrontController</servlet-name>
+     <servlet-class>com.itwillbs.basket.action.BasketFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>BasketFrontController</servlet-name>
+     <url-pattern>*.ba</url-pattern>
+  </servlet-mapping>  
+  <!-- 쇼핑몰-장바구니  -->
+  
+  
+  
+  
+</web-app>

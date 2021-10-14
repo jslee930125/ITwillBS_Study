@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  // 내장객체 - 날짜 객체 (Date)
+  
+  // 날짜 정보를 저장하고있는 객체를 생성
+  // new Date(); =>가비지 생성 (x) 
+  var d = new Date(); //  현 시스템의 날짜,시간정보를 저장하는 객체 
+  //alert("날짜 정보 : "+d);
+  var d1 = new Date(2021,5,6); // 특정날짜정보 저장객체 (년,월-1,일)
+  //alert(d1);
+  var d2 = new Date("2021/5/6");
+  // alert(d2);
+  var d3 = new Date(2021,5,6,9,30,0);//(년,월,일,시,분,초)
+  //alert(d3);
+  
+  // 오늘은  ㅇㅇ년  ㅇㅇ월  ㅇㅇ 일  ㅇㅇ 요일  
+  
+  document.write("오늘은 "+d.getFullYear()+"년 ");
+  document.write((d.getMonth()+1)+"월"); // d.getMonth()(0월~11월)
+  document.write(d.getDate()+"일");
+  
+  var myDay="";
+  
+  switch(d.getDay()){
+  case 0:
+	  myDay="일";
+	  break;
+  case 1:
+	  myDay="월";
+	  break;
+  case 2:
+	  myDay="화";
+	  break;
+  case 3:
+	  myDay="수";
+	  break;
+  case 4:
+	  myDay="목";
+	  break;
+  case 5:
+	  myDay="금";
+	  break;
+  case 6:
+	  myDay="토";
+	  break;
+  }
+  
+  //=> 요일을 출력하는 동작을 메서드로 구현후 실행
+  function dayOfWeek(d){
+	  // 해당요일 정보를 바탕으로 요일을 출력(x),요일을 리턴(o)
+	  
+	  var myDay="";
+	  
+	  switch(d){
+	  case 0:
+		  myDay="일";
+		  break;
+	  case 1:
+		  myDay="월";
+		  break;
+	  case 2:
+		  myDay="화";
+		  break;
+	  case 3:
+		  myDay="수";
+		  break;
+	  case 4:
+		  myDay="목";
+		  break;
+	  case 5:
+		  myDay="금";
+		  break;
+	  case 6:
+		  myDay="토";
+		  break;
+	  }
+	  
+	  // 결과리턴
+	  return myDay;  
+  }
+  
+  
+  //document.write(d.getDay()+"요일"); // d.getDay()(0일~6토)
+  document.write(myDay+"요일"); // d.getDay()(0일~6토)
+  document.write(dayOfWeek(d.getDay())+"요일<br>"); // d.getDay()(0일~6토)
+  
+  // whatTime() => "2021/5/6 5시 37분 00초" 출력하는 함수를 생성
+
+  document.write("<hr>");
+  var toDay = new Date();
+  
+  document.write(toDay.getFullYear()+"/");
+  document.write(toDay.getMonth()+1+"/");
+  document.write(toDay.getDate()+" ");
+  document.write(toDay.getHours()+"시");
+  document.write(toDay.getMinutes()+"분");
+  document.write(toDay.getSeconds()+"초<br>");
+  
+  document.write("<hr>");
+  
+  
+  // Day 계산기
+  // 특정일 객체 - 오늘(현재)객체
+  
+  var Dday = new Date(2021,11,31); // 21-12-31
+  var today = new Date(); 
+  
+  //document.write("dday : "+Dday+", today : "+today);
+  var result = Dday - today;
+  // alert(typeof result); => 날짜를 밀리세컨드 로 표시
+  
+  // 1초 = 1000 msc
+  // 1분 = 1000 * 60
+  // 1시간 = 1000 * 60 * 60
+  // 1일 = 1000 * 60 * 60 * 24
+  
+  //=> Dday 계산하기
+  
+  alert("남은 일수 : "+Math.ceil(result/(1000 * 60 * 60 * 24))+"일");
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</script>
+</head>
+<body>
+  <h1>WebContent/js2/test2.html</h1>
+  
+  
+
+</body>
+</html>

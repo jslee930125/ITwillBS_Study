@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  // window - location 객체 : 브라우저의 주소창에 대한 정보를 저장하는 객체
+  // => (window).location.속성 / (window).location.동작()
+  // .href  .protocol .hostname .host .port .search
+   
+  // location 객체의 속성을 확인
+  function fun1(){
+	  alert("href : "+window.location.href);
+	  alert("protocol : "+location.protocol);
+	  alert("hostname : "+location.hostname);
+	  alert("host : "+location.host);
+	  alert("port : "+location.port);
+	  alert("search : "+location.search);
+  }
+  // fun1()
+  
+  // location.href 속성을 변경 
+  // test1.html 페이지로 이동
+  function fun2(){
+	  // 페이지 이동
+	  //location.href="test1.html";
+	  location.href="../웹프로그래밍.txt";
+  }
+  
+  // 페이지 새로고침
+  //location.reload();
+  
+  // 페이지 이동
+  location.replace("test1.html");
+  
+  
+	
+</script>
+</head>
+<body>
+	<h1>WebContent/js2/test8.html</h1>
+	
+	<input type="button" value="location 속성값확인" onclick="fun1();"> <br>
+	<input type="button" value="location 속성값변경" onclick="fun2();"> <br>
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

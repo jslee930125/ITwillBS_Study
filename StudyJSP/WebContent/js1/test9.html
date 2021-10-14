@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script type="text/javascript">
+    // 별 그리기
+    // *
+    
+    // 1.  * * * * *
+    
+    //document.write(" * * * * * ");
+    
+    for(var i=1;i<=5;i++){
+    	document.write(" * ");	
+    }
+    
+    document.write("<hr>");
+    // 2. 
+    //   * * * * *
+    //   * * * * *
+    //   * * * * *
+    //   * * * * *
+    //   * * * * *
+    
+    document.write(" * * * * * <br>");
+    document.write(" * * * * * <br>");
+    document.write(" * * * * * <br>");
+    document.write(" * * * * * <br>");
+    document.write(" * * * * * <br>");
+    document.write("<hr>");
+    
+    for(var i=1;i<=5;i++){
+    	document.write("* * * * *<br>");
+    }
+    document.write("<hr>");
+    
+    for(var i=1;i<=5;i++){
+    	for(var j=1;j<=5;j++){
+    		document.write(" * ");
+    	}
+    	document.write("<br>");
+    }
+    document.write("<hr>");
+    
+    for(var i=1;i<=5;i++){
+    	for(var j=1;j<5;j++){
+    		document.write(" * ");
+    	}
+    	document.write(" * <br>");
+    }
+    
+    // 3. 
+    //   * 
+    //   * * 
+    //   * * * 
+    //   * * * * 
+    //   * * * * *
+    document.write("<hr>");
+    
+    for(var i=0;i<5;i++){
+    	for(var j=0;j<i;j++){
+    		document.write(" * ");
+    	}
+    	document.write(" * <br>");
+    }
+    // 4. 
+    //   * * * * *
+    //   * * * *
+    //   * * * 
+    //   * *  
+    //   * 
+    // 5. 
+    //   * * * * *
+    //     * * * * 
+    //       * * * 
+    //         * * 
+    //           *
+    document.write("<hr>");
+    
+    //Q.  1~20 까지 정수 중에서 2의 배수가 아니거나, 3의 배수가 아닌
+    //  모든 수의 총합 계산하시오.
+    
+    var sum = 0;
+    
+    for(var i=1;i<=20;i++){
+    	if(i%2 != 0 && i%3 != 0){
+    		//document.write(i+"<br>");
+    		sum = sum + i;
+    		//sum += i;
+    	}    	    	
+    }
+    
+    document.write(" 총합 : "+sum+"<br>");
+    document.write("<hr>");
+    
+    // Q. for문으로 작성된 코드를 while문으로 변경
+    document.write("for문<hr>");
+    for(var i=0;i<=10;i++){
+    	for(var j=0;j<=i;j++){
+    	   document.write(" * ");    		
+    	}    	
+    	document.write("<br>");
+    }
+    document.write("<hr>");
+    document.write("while문<hr>");
+    var i=0;
+    //var j=0;
+    while(i<=10){
+    	var j=0;
+    	while(j<=i){
+    		document.write(" * ");
+    		j++;
+    	}
+    	document.write("<br>");
+    	i++;
+    }
+    
+    document.write("<hr>");
+    // Q. 두 개의 주사위 던져서 나오는 눈의 합이 6이 되는 경우의 수를 모두 출력
+    //  => 해당 경우의 수를 몇개인지 출력
+    //   1 + 5 = 6
+    var cnt = 0;
+    // 1~6숫자, 1~6숫자
+    for(var i=1;i<=6;i++){
+    	//1~6
+    	for(var j=1;j<=6;j++){
+    	  //1~6
+    		if(i+j==6){
+    			document.write(i+" + "+j+" = "+(i+j)+"<br>");
+    			cnt++;
+    		}
+    	}    	
+    }
+    document.write("cnt : "+cnt);
+    
+    document.write("<hr>");
+    // Q. 방정식  2x + 4y = 10을 만족하는 모든 해를 구하시오.
+    //    (x,y 는 정수 / 0<=X<=10 / 0<=Y<=10)
+    for(var x=0;x<=10;x++){
+    	for(var y=0;y<=10;y++){
+    		if(2*x + 4*y == 10){
+    			document.write("x="+x+", y="+y+"<br>");
+    		}
+    	}
+    }
+    document.write("<hr>");
+    // Q.  1+(1+2)+(1+2+3)+(1+2+3+4)+....+(1+2+3+4+...+10)
+    //  => 해당 연산의 결과를 출력  220
+    
+    /*
+    a = 1;
+    b = 1+2; <=> a+2;
+    c = 1+2+3; <=> b+3;
+    d = 1+2+3+4 <=> c+4;
+        ....
+        1+2+3+...+10  <=>  x+10;
+    */
+    
+    var sum = 0;
+    var total = 0;
+    
+    for(var a=1;a<=10;a++){
+    	sum += a;
+    	total += sum;
+    	//document.write("sum : "+sum+"<br>");    	
+    	//document.write("total : "+total+"<br>");    	
+    }
+    
+    document.write("total : "+total+"<br>");    	
+    document.write("<hr>");
+    // Q. 1+(-2)+3+(-4)+5+(-6)+....
+    //  총합이 100 이상이 되는 숫자 계산하시오.
+    var sum = 0;
+    for(var i=1;true;i++){
+    	
+    	if(i%2 != 0){ //홀수
+    		sum += i;
+    	    //sum = sum + i;
+    	}else{ // 짝수
+    		sum -= i;
+    	    //sum = sum - i;
+    	    //sum += (-i);
+    	    //sum = sum + (-i);
+    	}
+    	
+    	if(sum>=100){
+    		document.write("sum = "+sum+"<br>");
+    		document.write("i = "+i+"<br>");	
+    		break;
+    	}
+    	
+    }
+    
+    document.write("<hr>");
+    
+    var sum = 0;
+    var s = 1; // 부호 (+ / -)
+    var num = 0;
+    
+    for(var i=1;true;i++,s=-s){
+    	num = s * i;
+    	sum += num;
+    	
+    	if(sum>=100){
+    		document.write("sum = "+sum+", num ="+num+"<br>");
+    		break;
+    	}
+    }
+    document.write("<hr>"); 
+    var sum = 0;
+    var s = 1; // 부호 (+ / -)
+    var num = 0;
+    
+    for(var i=1;sum<100;i++,s=-s){
+    	num = s * i;
+    	sum += num;
+    }
+    
+    document.write("sum = "+sum+", num ="+num+"<br>");
+    
+    document.write("<hr>");
+    // Q. 피보나치 수열 출력
+    //    [ 1 1 2 3 5 8 ....]
+    // * 첫번째, 두번째 수는 항상 1
+    // * 세번째 부터는 바로 앞에 두수의 합으로 계산
+    // => 10번째 까지 피보나치 수열을 출력
+    var num1=0;
+    var num2=0;
+    var num3=0;
+    
+    for(var i=1;i<=10;i++){
+    	if(i==1){
+    		num1=1;
+    		document.write(num1+ " ");
+    	}else if(i==2){
+    		num2=1;
+    		document.write(num2+ " ");
+    	}else{
+    		// 앞의 숫자 2개를 더해서 출력
+    		//  num1  num2  num3// num1 = 1 ,num2 = 1, num3=0
+    		// 3 -> 1 + 1 = 2  // num1 = 1 ,num2 = 1, num3=2
+    		// 4 -> 1 + 2 = 3  // num1 = num2 ,num2 = num3, num3=num1+num2
+    		// 5 -> 2 + 3 = 5
+    		// 6 -> 3 + 5 = 8
+    		// 7 -> 5 + 8 = 13
+    		// 8 -> 8 + 13 = 21
+    		// 9 -> 13 + 21 = 34
+    		// 10 -> 21 + 34 = 55
+    		
+    		num3 = num1 + num2;
+    		document.write(num3+" ");
+    		
+    		num1 = num2;
+    		num2 = num3;
+    		
+    	}
+    }
+    
+    document.write("<hr>");
+    
+    var num1=1;
+    var num2=1;
+    var num3=0;
+    
+    document.write(num1+" "+num2+" ");
+    
+    for(var i=0;i<8;i++){
+		num3 = num1 + num2;
+		document.write(num3+" ");
+		
+		num1 = num2;
+		num2 = num3;
+    }
+    
+    document.write("<hr>");
+    
+    // 랜덤값 Math.random()
+    // 0.0 <= Math.random() <1.0 사이의 실수 랜덤값
+    // document.write( Math.random() + "<br>");
+    
+ 	// 0.0*10 <= Math.random()*10 < 1.0 *10
+ 	// 0.0 <= Math.random()*10 < 10.0
+    // document.write( (Math.random()*10) + "<br>");
+ 	
+    // Math.floor(0.0) <= Math.floor(Math.random()*10) < Math.floor(10.0)
+    // 0 <= Math.floor(Math.random()*10) <10
+    document.write( Math.floor(Math.random()*10) + "<br>");
+    
+    // 0+1 <= Math.floor(Math.random()*10)+1 < 10+1
+    // 1 <= Math.floor(Math.random()*10)+1 < 11
+    
+    // Math.floor(Math.random()* X )+1
+    // => 1<= 랜덤값 <X
+    
+    // Q. 숫자 맞추기 게임
+    // 프로그램이 실행시 문제 1개 생성 ( 1~100 사이의 랜덤값-정수데이터 )
+    // 사용자가 정답을 입력 (input->prompt)
+    // 입력을 바탕으로 판단
+    // 1) 정답  > 입력  : "입력한 값이 작습니다. 더 큰 값을 입력하세요." 
+    // 2) 정답  < 입력  : "입력한 값이 큽니다. 더 작은 값을 입력하세요."
+    // 3) 정답 == 입력 : " 정답  도전횟수 00회 "
+    
+    // * 사용자가 정답을 맞출때 까지 진행
+
+    var quiz = Math.floor(Math.random()* 100 )+1;
+    var input = 0;
+    var cnt = 0;
+    alert("정답 : "+quiz);
+    
+    do{
+    	input = prompt("정답을 입력하세요");
+    	cnt ++;
+    	//alert("입력 : "+input);
+    	
+    	if(quiz > input){
+    		alert("입력한 값이 작습니다. 더 큰 값을 입력하세요.");    		
+    	}else if(quiz < input){
+    		alert("입력한 값이 큽니다. 더 작은 값을 입력하세요.");
+    	}else{ // quiz == input
+    		alert("정답  도전횟수 "+cnt+"회!");
+    	    break;
+    	}
+    }while(true);
+    
+    
+    
+    
+    
+    
+    
+ 
+ 
+ </script>
+</head>
+<body>
+   <h1>WebContent/js1/test9.html</h1>
+   
+   
+   
+   
+   
+   
+   
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  // 자바스크립트언어 : 객체 기반의 언어
+  // 객체(Object)  : 눈앞에 있는 모든 대상이 객체
+  //             특징(속성),기능(동작)으로 구성됨
+  // => 객체 추상화 - 실제 코드로 사용될 객체를 정의, 객체의 특징과 기능을 정의 
+  
+  // ex) 모니터 - 객체 
+  //     속성 - 크기,제조사,가격,화소등.... => 변수
+  //     동작 - 전원Onoff, 밝기조절,.... => 메서드(함수)
+  
+  // 객체 생성
+  // 참조변수 = new Object();
+  
+  // TV 객체 
+  var TV = new Object();
+  document.write("모델명 : "+TV.model+"<br>");
+  
+  // TV 속성을 지정
+  // 크기 (width,heigth,model,price)
+  TV.width = 3000;
+  TV.height = 4000;
+  TV.model = "삼성";
+  TV.price = "100만";
+  TV.power = false;  // off
+  
+  document.write("모델명 : "+TV.model+"<br>");
+  
+  // TV 기능 - 전원 On/Off => 함수(메서드 )사용
+  function tvPowerOnOff(){
+	  // off 실행, on 실행
+	  if(TV.power){ //true
+		  TV.power = false;
+	      alert("티비 종료!");
+	  }else{ // false
+		  TV.power = true;
+	      alert("티비 켜짐!");
+	  }  
+  }
+  
+   tvPowerOnOff();
+   tvPowerOnOff();
+  
+  // 스마트폰 - 모델명(model),가격(price),브랜드(brand),전화번호(telNum)
+  //        - 전화걸기() (tel)
+  
+  var Phone = new Object();
+  
+  Phone.model ="갤럭시S21";
+  Phone.price ="100만";
+  Phone.brand ="삼성";
+  Phone.telNum = "010-1234-4567";
+  
+  // 전화걸기 동작 -> "전원켜기" -> "통화앱 실행"->전화번호입력
+  // -> "통화버튼 클릭" -> 해당번호로 전화 
+  
+  Phone.tel = function(){
+	                alert("전원 켜기");
+	                alert("통화 앱 실행");
+	                alert("전화번호 입력");
+	                alert("통화버튼 클릭");
+	                alert("전화 걸기");	  
+             }
+  Phone.tel();
+  ////////////////////////////////////////////////////////////
+  function tel2(){
+	  alert("전원 켜기");
+	  var t = prompt(" 전화번호를 입력하세요. ");
+	  alert(t+"번호로 전화 연결중...");
+  }
+  
+  tel2();
+  
+  var Phone2 = new Object();
+  var Phone3 = new Object();
+  
+  
+  // 객체 사용하기
+  // 1) 객체를 생성 -> 객체를 메모리에 올리겠다. new(연산자)
+  // -> new 객체 생성 할때마다 메모리에 생성
+  // 2) 객체의 속성을 지정후 사용
+  // 3) 객체의 동작(메서드)을 사용해서 다양한 형태를 실행
+  
+  
+  // * 자바스크립트 객체
+  // 1) 내장객체 
+  //   -> 자바스크립트에 기본적으로 내장되어있는 객체(문자-String,배열-Array,날짜-Date,수학-Math...)
+  // 2) 브라우저 객체 모델(Browser Object Model)
+  //   -> 브라우저안에는 계층적으로 객체들이 모여있음
+  //     (window,screen,location,history,document,.....)  
+  // 3) 문서 객체 모델(Document Object Model)
+  //   -> 문서(document)를 구성하는 객체들 => HTML태그
+  
+  
+  
+  
+
+
+</script>
+</head>
+<body>
+  <h1>WebContent/js2/test1.html</h1>
+  
+  
+  
+  
+  
+</body>
+</html>

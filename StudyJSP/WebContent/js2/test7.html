@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document 객체 정보</title>
+<script type="text/javascript">
+  // window-document 객체
+  // -> window.document.xxxxx
+  // 속성 : title, location, bgColor(배경색),fgColor(글자색),....
+  // 동작 : write(),...
+  // fun1()
+  function fun1(){
+	  alert("document 속성");
+	  //alert(window.document);
+	  console.log(window.document);
+	  alert("title : "+document.title);
+	  alert("location : "+document.location);
+  }
+  // fun1()
+  
+  // fun2()
+  // -> "속성변경" 버튼 클릭 시  배경색을 yellow 변경
+  function fun2(){
+	  window.document.bgColor="yellow";
+  }
+  // fun2()
+  
+  //fun3()
+  function fun3(){
+	  // 배경색, 글자색 둘다 랜덤 변경
+	  var col =['red','green','blue','yellow','orange', '#112233','#E8D9FF'];
+	  
+	  // 랜덤값 (0~6)
+	  //alert(  Math.floor( Math.random()*7 )  );
+	  var rb = Math.floor( Math.random()*7 );
+	  var rf = Math.floor( Math.random()*7 );
+	  
+	  // 배경색 변경
+	  document.bgColor=col[rb];
+	  // 글자색 변경
+	  document.fgColor=col[rf];
+  }
+  //fun3()
+  
+  function fun4(c){
+	  document.bgColor=c;
+  }
+  // fun4()
+  
+  
+  
+  
+
+</script>
+</head>
+<body>
+  <h1>WebContent/js2/test7.html</h1>
+  
+  <input type="button" value="속성확인" onclick="fun1();">
+  
+  <input type="button" value="속성변경" onclick="fun2();">
+  
+  <input type="button" value="속성변경(random)" onclick="fun3();">
+  
+  <hr>
+  <!-- fun4() 사용 : 라디오버튼의 색으로 배경색 변경하기 -->
+  <input type="radio" name="col" onclick="fun4('pink');"> PINK
+  <input type="radio" name="col" onclick="fun4('orange');"> ORANGE
+  <input type="radio" name="col" onclick="fun4('purple');"> PURPLE
+  
+  
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- spring dtd 설정 -->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+<beans>
+
+	<!-- 스프링 객체 생성 (setter를 사용) -->
+	<bean id="person" class="ex3.PersonServiceImpl">
+	  <!-- 객체의 속성(변수) : 객체의 set 메서드 호출 
+	  	set 메서드 없이 property속성 호출시 에러 발생
+	  -->
+	  <property name="name">
+	  	<value>홍길동!</value>
+	  </property>  
+	  <property name="age" value="20"/>	  
+	</bean>	
+	
+	<!--생성자를 통해 값 설정  -->
+	<bean id="person2" class="ex3.PersonServiceImpl">
+	  <constructor-arg>
+	    <value>홍길동1</value>
+	  </constructor-arg>				
+	</bean>
+</beans>        
+        
+

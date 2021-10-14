@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	// 함수(function) - 메서드
+
+	// 변수 -> 데이터를 저장공간 (명사)
+	// 함수 -> 실행문(코드)를 저장하는 공간 => 한번에 여러개의 코드를 실행가능
+	// => 특정 동작을 표현할때 사용 (동사)
+	// * 유사한 동작들을 모아서 처리하도록 선언 => 모듈화 
+
+	// 함수의 선언
+	//    function 함수명(){
+	// 	   실행문1;
+	// 	   실행문2;
+	// 	   ...
+	//    }
+
+	// 함수의 사용
+	//  함수명();
+
+	// 익명함수 선언
+	// var 참조 변수명 = function(){
+	//  			 실행문;
+	// 				 }
+
+	// 익명함수 호출
+	// 참조 변수명();
+
+	// 본인의 이름정보를 출력하는  myName() 함수 생성후 호출
+
+	function myName() {
+		document.write(" 홍길동 ! <br>");
+	}
+
+	myName();
+
+	// 본인의 정보를 출력하는 myInfo() 함수 생성
+	// 이름,전화번호,주소 출력
+
+	function myInfo() {
+		document.write(" 홍길동 ! <br>");
+		document.write(" 010-1234-1324 ! <br>");
+		document.write(" 부산진구 ! <br>");
+	}
+
+	myInfo();
+	document.write("<hr>");
+
+	myInfo();
+
+	// myInfo() 함수 -> 익명함수로 변경후 출력
+	// myInfo2 참조변수 사용
+
+	var myInfo2 = function() {
+		document.write(" 홍길동 ! <br>");
+		document.write(" 010-1234-1324 ! <br>");
+		document.write(" 부산진구 ! <br>");
+	}
+	myInfo2();
+	///////////////////////////////////////////////////
+	//  function 함수명(매개변수,매개변수,...){
+	//	     매개변수 사용;    	
+	//  }
+
+	// 함수명(매개변수,매개변수,...);
+
+	function myInfo3(name) {
+		document.write(name + " ! <br>");
+		document.write(" 010-1234-1324 ! <br>");
+		document.write(" 부산진구 ! <br>");
+	}
+	myInfo3("김학생");
+
+	//myInfo4()-> 이름,전화번호,주소입력받아서 출력
+	function myInfo4(name, tel, addr) {
+		document.write(name + " ! <br>");
+		document.write(tel + " ! <br>");
+		document.write(addr + " ! <br>");
+	}
+	myInfo4("이학생", "010-1234-1234", "부산진구");
+
+	// * 매개변수 -> 몇개 까지 사용가능? 필요한 만큼 사용
+	//   6개까지 사용권장
+
+	/////////////////////////////////////////////
+
+	// 로그인 처리 
+	//var inputID = prompt(" 아이디를 입력하시오 .");
+	//var inputPW = prompt(" 비밀번호를 입력하시오. ");
+
+	function loginCheck(inputID,intputPW){
+		var ID = "admin";
+		var PW = "1234";
+		
+		if (ID == inputID) {
+			if (PW == inputPW) {
+				alert(inputID + "님 로그인 성공! ");
+			} else {
+				alert("비밀번호 오류!");
+			}
+		} else {
+			alert(" 아이디 정보가 없음 ! ");
+		}
+	}
+	
+	//loginCheck(inputID, inputPW);
+	
+	// 함수의 결과를 리턴
+	// 	function 함수명(){
+	// 		실행문;
+	// 		return 데이터/변수;
+	// 	}
+	
+	// 	함수 - 이름 O - 함수()
+	// 	    - 이름 X - 익명함수()
+	// 	  => 매개변수 O,X => 함수호출시(매개변수,...),함수호출시()
+	// 	  => 리턴 O,X => 함수결과 리턴O, 함수결과 리턴X
+	
+	// myPhone() - 내 전화번로를 출력하기위해서 정보를 리턴
+// 	function myPhone(){
+// 		return "010-1234-1234";		
+// 	}
+	function myPhone(){
+		var tel = "010-1234-1234";
+		return tel;		
+		
+	    alert("전화번호 체크");		
+	}
+	// 함수호출
+	//var value = myPhone();
+	//alert(value);
+	
+	alert( myPhone() );
+	
+	// * 메서드의 목적 : 실행문을 한번에 묶어서 실행
+	// => 안에있는 코드를 모두 실행  => 결과를 리턴하기 위해 실행
+	
+	// return문 => 1) 특정값을 리턴, 2) 함수의 끝
+	
+
+	// 	function 함수명(){
+	// 		return; // 함수의 종료
+	// 	}
+	
+	// 함수 fun1()
+	// 매개변수 2개(숫자)를 전달받아서 두개의 합을 리턴하는 함수
+	function fun1(num1,num2){
+		//return num1+num2;
+		var result = num1 + num2;
+		return result;
+	}
+	
+	alert( fun1(20,20) );
+	
+	
+	// * 재귀 함수 호출 : 함수내부에서 다시 자신의 함수를 호출
+	
+	var cnt = 0;
+	
+	function myfun(){
+		alert("test");
+		cnt++;
+		
+		//if(cnt>=10) break;(x)
+		if(cnt>=10) return;
+		
+		myfun();
+	}
+	
+	myfun();
+	////////////////////////////////////////////
+	
+	// 변수
+	// - 전역변수 : 전역에서 사용가능한 변수
+	// - 지역변수 : 지역에서 사용가능한 변수
+	
+	var a = 200;
+	// 전역변수 : 프로그램이 생성시 변수 생성,
+	//          프로그램이 종료시 변수는 사라짐
+	
+	function testA(){
+		var a = 300;
+		// 지역변수 : 함수가 생성후 호출시 변수가 생성됨,
+		//          함수 종료시 변수는 사라짐
+	}
+	
+    testA();	
+	
+	document.write(a);
+	
+	// 내장함수 : 자바스크립트에 포함되어잇는 함수
+	// alert(); prompt(); Number(); Boolean();.... 
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+	<h1>WebContent/js1/test10.html</h1>
+</body>
+</html>

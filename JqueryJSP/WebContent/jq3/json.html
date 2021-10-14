@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		// ajax 사용해서 json데이터를 가져오기 
+		$.ajax('json1.jsp',{
+			
+			dataType: "json",
+			success: function(data){
+				//alert("성공");
+				//alert(data);
+				//console.log(data);
+				$('body').append(data.name);
+// 				$(data).each(function(k,v){
+// 					//$('body').append(k+"//"+v+"<br>");
+// 					$('body').append(k+"//"+v.name+"<br>");
+// 					$('body').append(k+"//"+v.age+"<br>");
+// 					$('body').append(k+"//"+v.gender+"<br>");
+// 				});
+			}
+		});// ajax
+		
+		// .getJSON() : 비동기 방식으로 JSON데이터를 가져옴
+		
+		$.getJSON('json1.jsp',function(data){
+			//alert("data : "+data);
+			//console.log(data);
+			$.each(data,function(k,v){
+				$('body').append(k+"//"+v+"<hr>");
+			});
+			
+		});
+		
+		
+		
+
+	});
+</script>
+
+
+
+</head>
+<body>
+	<h1>WebContent/jq3/json.html</h1>
+
+
+
+
+</body>
+</html>

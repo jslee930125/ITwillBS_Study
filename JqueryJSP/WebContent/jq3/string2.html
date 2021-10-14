@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+	   
+	   $.ajax('string2.jsp',{
+		   
+		   data : { name:'홍길동',age:20 },
+		   success:function(data){
+			   alert('페이지 호출완료!');
+			   alert(data);
+			   $('body').append(data);
+		   }
+	   });
+	   
+	   
+   });
+
+
+</script>
+
+
+</head>
+<body>
+  <h1>WebContent/jq3/string2.html</h1>
+  <!-- 
+    string2.jsp 페이지에 있는 정보를 출력
+  
+   -->
+  
+  
+  
+  
+  
+  
+
+</body>
+</html>

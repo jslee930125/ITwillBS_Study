@@ -1,0 +1,45 @@
+EL.txt
+
+EL(Expression Laguage) 표현언어
+
+=>  JSP의 표현식을 출력하는 표현
+   <%=  %> =>  ${   }
+   
+ * 기본적인 코드 복잡성이 감소  
+
+   ${변수명}
+   ${객체명.변수명}
+   ${객체명['변수명']}
+   ${객체명["변수명"]}
+   ${연산식 }
+   
+ * EL의 내장객체(p513)
+ 
+   - pageScope/requestScope/sessionScope/applicationScope
+     => JSP 영역(내장객체)를  사용하는 객체 
+   - param / paramValues 
+     => 파라미터값/배열을 가져올때 사용
+   - header / headerValues
+     => 페이지 header의 정보 값/ 배열을 가져올 때 사용
+   - cookie
+   - pageContext
+     => JSP-PageContext 객체를 사용
+   - initParam       
+ 
+ 
+ * page < request < session < application
+   => EL표현식에서는 영역객체의 접근부분을 생략 가능
+   ${ pageScope.test }  => ${test}
+   
+   => 영역객체의 정보가 없을경우 영역의 범위가 적은곳에서 큰곳으로 가면서
+      순차적으러 해당 대상을 검색, 이때 동일한 속성명이 있을 경우 먼저 만난 속성을 사용
+      
+      
+      
+ 
+ 
+ 
+ 
+   
+   
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   // 배열 객체(Array)
+   // 배열 : 데이터를 저장하는 연속된 공간 ( 데이터 타입 상관 X )
+   
+   // int[] 이름 = new int[크기]; // java
+   
+   // 1) var 참조변수 = new Array();
+   // 2) var 참조변수 = new Array(값1,값2,...);
+   // 3) var 참조변수 = [값1,값2,값3.....];
+   
+   // 각각의 데이터를 '요소' => '요소'에 대한 접근은 배열의 이름으로 사용
+   // '요소'는 변수처럼 사용가능
+   // 배열의 요소를 저장할때는 항상 0번 인덱스부터 사용
+   
+   // 배열 생성
+   var arr = new Array();
+   arr[0]=100;
+   arr[1]=200;
+   arr[2]=300;
+   arr[3]=400;
+   
+   document.write(arr[0]+"<hr>");
+   // 반복문을 사용해서 배열의 모든요소 출력
+   //for(var i=0;i<4;i++){
+   for(var i=0;i<arr.length;i++){
+	   document.write("arr["+i+"]:"+arr[i]+"<hr>");   
+   }
+   
+//    for(var i=0;i<=arr.length;i++){
+// 	   document.write("arr["+i+"]:"+arr[i]+"<hr>");   
+//    }
+
+   // for~in 반복문 : 배열의 크기를 i에 저장 (0~배열의 크기만큼 변경)
+//    for(var i in 배열){
+// 	   document.write(배열[i]+"<hr>");
+//    }
+   var arr2 = [1,2,3,4,5,6];
+   
+   for(var i in arr2){
+	   document.write("arr2["+i+"] = "+arr2[i]+"<br>");
+   }
+   
+   // 자바스크립트는 데이터 타입 상관없이 저장가능
+   var arr3 = ["itwill",100,3.11,'busan'];
+   
+   var arr4 = [1,2,3,4,5];
+   
+   document.write("arr4 : "+arr4+"<br>");
+   document.write("arr4 : "+arr4.join("@")+"<br>");
+   document.write("arr4 : "+arr4.reverse()+"<br>");
+   
+   // [ 6,8,5,9,1,2,4,3,7]
+   //  큰수 -> 작은수 정렬 출력
+   var arr5 = [6,8,5,9,1,2,4,3,7];  
+   // sort() : 오름차순 정렬 (1,2,3,4.....)
+   document.write("arr5 : "+arr5.sort()+"<br>");
+   document.write("arr5 : "+arr5.reverse()+"<br>");
+   
+   // 배열의 모든 요소의 값을 더하기
+   var sum = 0;
+   for(var i=0;i<arr5.length;i++){
+	   sum += arr5[i];
+   }
+   document.write("누적합 결과 : "+sum+"<br>");
+   //document.write("평균 : "+sum/9+"<br>");
+   document.write("평균 : "+sum/arr5.length+"<br>");
+   
+   
+   // 사용자 이메일체크
+   // itwill@naver.com (o) / itwill@it.com (x)
+   // - 사용자 이메일을 입력받아서 입력된 주소가 정상적인 이메일인지 아닌지 판별
+   // 1) 주소에 '@'가 포함되어있는지 체크
+   // 2) [".co.kr",".com",".net",".or.kr",".go.kr"] 해당 주소만 정상이메일 판단
+   
+   //=> 2개의 조건을 둘다 만족한경우 " 사용가능한 이메일입니다 ",
+   //   2중에 하나라도 만족하지 못한경우 " 사용 불가능한 이메일 입니다."
+   
+   
+   var emailValue = prompt("이메일 주소를 입력하시오.");
+   
+   var check1 = false;
+   var check2 = false;   
+   
+   // 1) 주소에 '@'가 포함되어있는지 체크
+   if( emailValue.indexOf('@') > 5){
+	  // alert("정상 이메일입니다.");	   
+	   check1 = true;
+   }
+   
+   //2) [".co.kr",".com",".net",".or.kr",".go.kr"] 해당 주소만 정상이메일 판단
+   var addrUrl = [".co.kr",".com",".net",".or.kr",".go.kr"];
+   
+   for(var i =0;i<addrUrl.length;i++){
+	   if( emailValue.indexOf(addrUrl[i]) > -1){
+		 //  alert("정상 이메일입니다.");
+		   check2 = true;
+	   }
+   }
+   
+   // 조건 2개를 만족하는지 체크
+   if(check1 && check2){
+	   alert(" 사용가능한 이메일 입니다. ");
+   }else{
+	  alert("사용불가능한 이메일 입니다.");
+   }
+   
+   
+  
+   
+   
+   
+   
+   
+   
+
+   
+   
+   
+   
+</script>
+</head>
+<body>
+  <h1>WebContent/js2/test4.html</h1>
+</body>
+</html>

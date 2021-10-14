@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   // prompt(); 로그인 처리로직
+   
+   // 본인 ID,PW 정보 (DB->변수)
+   // prompt 사용해서 ID,PW 정보를 입력받기
+   
+   // ID -> 입력된 ID, 저장된 변수ID 같은지 체크
+   // 1) O (회원) => 본인의 비밀번호를 체크
+   //             1) O => 본인 => "ㅇㅇㅇ님 로그인 성공!"
+   //             2) X => 본인(비밀번호 오류) => "비밀번호 오류!"  
+   // 2) X (비회원) => 메세지 출력 "아이디 정보가 없음!"
+   
+  /*  var ID = "admin";
+   var PW = "1234";
+   
+   var inputID = prompt(" 아이디를 입력하시오 .");
+   var inputPW = prompt(" 비밀번호를 입력하시오. ");
+   
+   if(ID == inputID){
+	   if(PW == inputPW){
+		   alert(inputID+"님 로그인 성공! ");
+	   }else{
+		   alert("비밀번호 오류!");
+	   }
+   }else{
+	   alert(" 아이디 정보가 없음 ! ");
+   }
+    */
+   //////////////////////////////////////////////
+   
+   
+   // 특정 페이지로 이동
+   //location.href="페이지 주소";
+   //location.href="http://www.naver.com";
+   
+   // 사용자가 포털사이트의 이름을 입력시(prompt) 해당 페이지로 이동
+   // naver,daum,nate,google// + 대문자,한글
+   
+   var site = prompt("이동할 포털 사이트의 이름을 입력하시오. ");
+   //alert(site);
+   var url="";
+   
+   switch(site){
+   case "네이버":
+   case "NAVER":
+   case "naver":
+	   alert(" naver 페이지 이동! ");
+	   //location.href="http://www.naver.com";
+	   url = "www.naver.com";	   
+	   break;
+   case "daum":
+	   alert(" daum 페이지 이동! ");
+	   //location.href="http://www.daum.net";
+	   url = "www.daum.net";
+	   break;
+   case "nate":
+	   alert(" nate 페이지 이동! ");
+	   //location.href="http://www.nate.com";
+	   url = "www.nate.com";
+	   break;
+   case "google":
+	   alert(" google 페이지 이동! ");
+	   //location.href="http://www.google.com";
+	   url="www.google.com";
+	   break;
+   
+   default:
+	   alert(" 처리 불가능한 페이지 입니다.");
+   }
+   
+   if(url){ //해당주소가 있을경우
+	   location.href="http://"+url;   
+   }
+   
+   
+   
+</script>
+
+</head>
+<body>
+	<h1>WebCotent/js1/test6.html</h1>
+
+
+
+
+
+
+
+
+</body>
+</html>
